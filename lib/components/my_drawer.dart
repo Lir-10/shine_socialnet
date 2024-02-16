@@ -37,7 +37,7 @@ class MyDrawer extends StatelessWidget {
               //profile list tile
               MyListTile(
                 icon: Icons.person,
-                text: 'P R O F I L E',
+                text: 'P E R F I L',
                 onTap: onProfileTap,
               ),
             ],
@@ -48,7 +48,7 @@ class MyDrawer extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 25),
             child: MyListTile(
               icon: Icons.logout,
-              text: 'L O G O U T',
+              text: 'C E R R A R S E S I O N',
               onTap: onSignOut,
             ),
           ),
