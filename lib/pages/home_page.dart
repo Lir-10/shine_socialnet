@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Colors.grey[300],
         appBar: AppBar(
-          title: const Text('The Wall'),
+          title: const Text('Shine'),
           backgroundColor: Colors.grey[900],
         ),
         body: Center(
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: MyTextField(
                         controller: textController,
-                        hintText: 'Wirte something on the wall..',
+                        hintText: 'Escribe Algo',
                         obscureText: false,
                       ),
                     ),
@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
 
               //logged in
               Text(
-                'LOGGED IN AS: ${currrentUser.email!}',
+                'Sesion Iniciada Como: ${currrentUser.email!}',
                 style: const TextStyle(color: Colors.grey),
               ),
 
