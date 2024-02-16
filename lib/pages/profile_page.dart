@@ -22,7 +22,7 @@ class ProfilePage extends StatelessWidget {
         builder: (context) => AlertDialog(
           backgroundColor: Colors.grey[900],
           title: Text(
-            'Editar $field',
+            'Edit $field',
             style: const TextStyle(color: Colors.white),
           ),
           content: TextField(
@@ -31,7 +31,7 @@ class ProfilePage extends StatelessWidget {
               color: Colors.white,
             ),
             decoration: InputDecoration(
-              hintText: 'Ingresar Nuevo $field',
+              hintText: 'Enter new $field`',
               hintStyle: const TextStyle(color: Colors.grey),
             ),
             onChanged: (value) {
@@ -43,13 +43,13 @@ class ProfilePage extends StatelessWidget {
             TextButton(
               onPressed: () => Navigator.pop(context),
               child:
-                  const Text('Cancelar', style: TextStyle(color: Colors.white)),
+                  const Text('Cancel', style: TextStyle(color: Colors.white)),
             ),
 
             //save button
             TextButton(
               onPressed: () => Navigator.of(context).pop(newValue),
-              child: const Text('Guardar', style: TextStyle(color: Colors.white)),
+              child: const Text('Save', style: TextStyle(color: Colors.white)),
             ),
           ],
         ),
@@ -65,7 +65,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.grey[300],
         appBar: AppBar(
-          title: const Text('Perfil de Usuario'),
+          title: const Text('Profile Page'),
           backgroundColor: Colors.grey[900],
         ),
         body: StreamBuilder<DocumentSnapshot>(
@@ -106,15 +106,15 @@ class ProfilePage extends StatelessWidget {
 
                   //username
                   MyTextBox(
-                    text: userData['Nombre de Usuario'],
-                    sectionName: 'userName',
+                    text: userData['username'],
+                    sectionName: 'Nombre de Usuario',
                     onPressed: () => editField('username'),
                   ),
 
                   //bio
                   MyTextBox(
-                    text: userData['Sobre Mi'],
-                    sectionName: 'bio',
+                    text: userData['bio'],
+                    sectionName: 'Sobre Mi',
                     onPressed: () => editField('bio'),
                   ),
                   const SizedBox(height: 30.0),
