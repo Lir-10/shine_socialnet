@@ -78,8 +78,8 @@ class _LoginPageState extends State<LoginPage> {
             const Icon(Icons.lock, size: 100),
             const SizedBox(height: 50),
 
-            //welcome back, you've been missed!
-            Text('Welcome back you\'ve  been missed!',
+            //Mensaje de Bienvenida!
+            Text('Bienvenido de nuevo',
                 style: TextStyle(color: Colors.grey[700], fontSize: 16)),
             const SizedBox(height: 50),
 
@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text('Forgot Password?',
+                    Text('Olvidaste la Contraseña?',
                         style: TextStyle(color: Colors.grey[600]))
                   ],
                 )),
@@ -113,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
 
             //sign in buttton
             MyButton(
-              text: 'Sign in',
+              text: 'Iniciar Sesion',
               onTap: signUserIn,
             ),
             const SizedBox(height: 50),
@@ -129,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.00),
                     child: Text(
-                      'Or continue with',
+                      'Continua con',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                   ),
@@ -162,13 +162,13 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Not a member?',
+                Text('No tienes una cuenta?',
                     style: TextStyle(color: Colors.grey[700])),
                 const SizedBox(width: 4),
                 GestureDetector(
                   onTap: widget.onTap,
                   child: const Text(
-                    'Registe NOW',
+                    'Crear Cuenta',
                     style: TextStyle(
                         color: Colors.green, fontWeight: FontWeight.bold),
                   ),
