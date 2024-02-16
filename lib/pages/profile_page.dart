@@ -98,7 +98,7 @@ class ProfilePage extends StatelessWidget {
                   //user details
                   Padding(
                     padding: const EdgeInsets.only(left: 25.0),
-                    child: Text('My Details',
+                    child: Text('Mi Informacion',
                         style: TextStyle(
                           color: Colors.grey[600],
                         )),
@@ -106,14 +106,14 @@ class ProfilePage extends StatelessWidget {
 
                   //username
                   MyTextBox(
-                    text: userData['username'],
+                    text: userData['Nombre de Usuario'],
                     sectionName: 'userName',
                     onPressed: () => editField('username'),
                   ),
 
                   //bio
                   MyTextBox(
-                    text: userData['bio'],
+                    text: userData['Sobre Mi'],
                     sectionName: 'bio',
                     onPressed: () => editField('bio'),
                   ),
@@ -122,7 +122,7 @@ class ProfilePage extends StatelessWidget {
                   //user posts
                   Padding(
                     padding: const EdgeInsets.only(left: 25.0),
-                    child: Text('My Posts',
+                    child: Text('Mis Publicaciones',
                         style: TextStyle(
                           color: Colors.grey[600],
                         )),
