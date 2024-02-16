@@ -22,7 +22,7 @@ class ProfilePage extends StatelessWidget {
         builder: (context) => AlertDialog(
           backgroundColor: Colors.grey[900],
           title: Text(
-            'Edit $field',
+            'Editar $field',
             style: const TextStyle(color: Colors.white),
           ),
           content: TextField(
@@ -31,7 +31,7 @@ class ProfilePage extends StatelessWidget {
               color: Colors.white,
             ),
             decoration: InputDecoration(
-              hintText: 'Enter new $field',
+              hintText: 'Ingresar Nuevo $field',
               hintStyle: const TextStyle(color: Colors.grey),
             ),
             onChanged: (value) {
@@ -43,13 +43,13 @@ class ProfilePage extends StatelessWidget {
             TextButton(
               onPressed: () => Navigator.pop(context),
               child:
-                  const Text('Cancel', style: TextStyle(color: Colors.white)),
+                  const Text('Cancelar', style: TextStyle(color: Colors.white)),
             ),
 
             //save button
             TextButton(
               onPressed: () => Navigator.of(context).pop(newValue),
-              child: const Text('Save', style: TextStyle(color: Colors.white)),
+              child: const Text('Guardar', style: TextStyle(color: Colors.white)),
             ),
           ],
         ),
@@ -65,7 +65,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.grey[300],
         appBar: AppBar(
-          title: const Text('Profile Page'),
+          title: const Text('Perfil de Usuario'),
           backgroundColor: Colors.grey[900],
         ),
         body: StreamBuilder<DocumentSnapshot>(
