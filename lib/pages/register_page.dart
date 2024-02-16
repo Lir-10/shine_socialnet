@@ -104,7 +104,7 @@ class _RegisterPageState extends State<RegisterPage> {
             const SizedBox(height: 25),
 
             //Let's create an account for you!
-            Text('Let\'s create an account for you!',
+            Text('Crear cuenta nueva para ti',
                 style: TextStyle(color: Colors.grey[700], fontSize: 16)),
             const SizedBox(height: 25),
 
@@ -150,7 +150,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.00),
                     child: Text(
-                      'Or continue with',
+                      'O continua con',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                   ),
@@ -184,7 +184,7 @@ class _RegisterPageState extends State<RegisterPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Already have an account?',
+                Text('Ya tienes una cuenta?',
                     style: TextStyle(color: Colors.grey[700])),
                 const SizedBox(width: 4),
                 GestureDetector(
