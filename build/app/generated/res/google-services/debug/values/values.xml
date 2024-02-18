@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">134611428258</string>
+    <string name="google_api_key" translatable="false">AIzaSyCSbgI5ErphAnVYQoPn2mxMhnrz-ceRcwk</string>
+    <string name="google_app_id" translatable="false">1:134611428258:android:854493647f41e0ca7188fb</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCSbgI5ErphAnVYQoPn2mxMhnrz-ceRcwk</string>
+    <string name="google_storage_bucket" translatable="false">socialnetwork-3e670.appspot.com</string>
+    <string name="project_id" translatable="false">socialnetwork-3e670</string>
+</resources>

@@ -8,22 +8,23 @@ class WallPost extends StatefulWidget {
   final String user;
   final String postId;
   final List<String> likes;
+  final String imageURL;
+
   const WallPost({
-    super.key,
+    Key? key,
     required this.message,
     required this.user,
     required this.postId,
     required this.likes,
-  });
+    required this.imageURL,
+  }) : super(key: key);
 
   @override
   State<WallPost> createState() => _WallPostState();
 }
 
 class _WallPostState extends State<WallPost> {
-  // user
   final currentUser = FirebaseAuth.instance.currentUser!;
-
   bool isLiked = false;
 
   @override
@@ -32,22 +33,18 @@ class _WallPostState extends State<WallPost> {
     isLiked = widget.likes.contains(currentUser.email);
   }
 
-  //toggle like
   void toggleLike() {
     setState(() {
       isLiked = !isLiked;
     });
 
-    //Access the document is Firebase
     DocumentReference postRef =
         FirebaseFirestore.instance.collection('User Posts').doc(widget.postId);
     if (isLiked) {
-      //if the post is now liled, add the user's email to the 'Likes' field
       postRef.update({
         'Likes': FieldValue.arrayUnion([currentUser.email])
       });
     } else {
-      // if the post is now unliked, remove the user's email from the 'Likes' field
       postRef.update({
         'Likes': FieldValue.arrayRemove([currentUser.email])
       });
@@ -63,40 +60,59 @@ class _WallPostState extends State<WallPost> {
       ),
       margin: const EdgeInsets.only(top: 25, right: 25, left: 25),
       padding: const EdgeInsets.all(25),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Column(
-            children: [
-              //like button
-              LikeButton(
-                isLiked: isLiked,
-                onTap: toggleLike,
-              ),
-              const SizedBox(height: 5),
-              //lile count
-              Text(
-                widget.likes.length.toString(),
-                style: const TextStyle(color: Colors.grey),
-              ),
-            ],
+          // Image
+          Image.network(
+            widget.imageURL,
+            fit: BoxFit.cover,
+            height: 200,
           ),
-          const SizedBox(width: 20),
-          //message and user email
+
+          const SizedBox(height: 10),
+
+          // Message
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                widget.user,
-                style: TextStyle(color: Colors.grey[500]),
+                widget.message,
+                style: TextStyle(
+                  color: Colors.black, // Color del texto del mensaje
+                  fontWeight: FontWeight.bold, // Negrita
+                ),
               ),
-              const SizedBox(
-                height: 10,
+              const SizedBox(height: 10),
+              // User and Like button
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    widget.user,
+                    style: TextStyle(
+                      color: Colors.grey[500], // Color del texto del usuario
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      LikeButton(
+                        isLiked: isLiked,
+                        onTap: toggleLike,
+                      ),
+                      Text(
+                        widget.likes.length.toString(),
+                        style: const TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              Text(widget.message),
             ],
-          )
+          ),
         ],
       ),
     );
   }
 }
+
