@@ -48,7 +48,7 @@ class MyDrawer extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 25),
             child: MyListTile(
               icon: Icons.logout,
-              text: 'C E R R A R S E S I O N',
+              text: 'C E R R A R  S E S I O N',
               onTap: onSignOut,
             ),
           ),

@@ -8,6 +8,7 @@ import 'package:the_wall/components/my_drawer.dart';
 import 'package:the_wall/components/my_text_field.dart';
 import 'package:the_wall/pages/profile_page.dart';
 import 'package:the_wall/pages/wall_post.dart';
+import 'package:the_wall/helper/helper_methods.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -162,6 +163,7 @@ class _HomePageState extends State<HomePage> {
                           imageURL: post['ImageURL'],
                           postId: post.id,
                           likes: List<String>.from(post['Likes'] ?? []),
+                          time: formatDate(post['TimeStamp']),
                         );
                       },
                     );

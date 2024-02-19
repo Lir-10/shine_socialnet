@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:the_wall/components/my_text_box.dart';
+import 'package:the_wall/helper/helper_methods.dart';
 import 'package:the_wall/pages/wall_post.dart'; // Importa la clase WallPost
 
 class ProfilePage extends StatelessWidget {
@@ -161,6 +162,7 @@ class ProfilePage extends StatelessWidget {
                         imageURL: post['ImageURL'],
                         postId: userPosts[index].id,
                         likes: List<String>.from(post['Likes'] ?? []),
+                        time: formatDate(post['TimeStamp']),
                       );
                     },
                   ),
