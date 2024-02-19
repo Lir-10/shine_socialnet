@@ -135,10 +135,10 @@ class _HomePageState extends State<HomePage> {
         onProfileTap: goToProfilePage,
         onSignOut: signUserOut,
       ),
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         title: const Text('Shine'),
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Color.fromARGB(255, 0, 0, 0),
       ),
       body: Center(
         child: Column(
