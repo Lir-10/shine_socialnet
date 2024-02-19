@@ -65,6 +65,8 @@ MERGED from [:cloud_firestore] C:\Users\garci\OneDrive\Documentos\shine_socialne
 MERGED from [:firebase_core] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:image_picker_android] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:sqflite] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:path_provider_android] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:google_sign_in_android] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\garci\.gradle\caches\transforms-3\83f90295e01dd783f55d771fc3bd203b\transformed\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\garci\.gradle\caches\transforms-3\e9ba052f6380fb3d9a566d9ce0f56733\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:17:1-75:12
@@ -96,8 +98,8 @@ MERGED from [androidx.core:core-ktx:1.10.1] C:\Users\garci\.gradle\caches\transf
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\garci\.gradle\caches\transforms-3\76cf62c1b1b3420373c956d9e4a7a284\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.10.1] C:\Users\garci\.gradle\caches\transforms-3\c66a84034fdee472d77a2fc15f5cce5d\transformed\core-1.10.1\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\garci\.gradle\caches\transforms-3\100f2208dfdabee97c8ddb21005bbc52\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\4be12c591a9833e2430657cefea06f9e\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\f51173b938578942136a18daa1d5ec05\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\4be12c591a9833e2430657cefea06f9e\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\163b95b83835948ce3840986f39c6869\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\9ef3829d2ce82dd3d2c5a4157cc9b7db\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\066b657ac1dbf4221aab2808144f2874\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
@@ -146,6 +148,10 @@ MERGED from [:image_picker_android] C:\Users\garci\OneDrive\Documentos\shine_soc
 MERGED from [:image_picker_android] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:google_sign_in_android] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:google_sign_in_android] C:\Users\garci\OneDrive\Documentos\shine_socialnet\build\google_sign_in_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\garci\.gradle\caches\transforms-3\83f90295e01dd783f55d771fc3bd203b\transformed\multidex-2.0.1\AndroidManifest.xml:20:5-43
@@ -208,10 +214,10 @@ MERGED from [androidx.core:core:1.10.1] C:\Users\garci\.gradle\caches\transforms
 MERGED from [androidx.core:core:1.10.1] C:\Users\garci\.gradle\caches\transforms-3\c66a84034fdee472d77a2fc15f5cce5d\transformed\core-1.10.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\garci\.gradle\caches\transforms-3\100f2208dfdabee97c8ddb21005bbc52\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\garci\.gradle\caches\transforms-3\100f2208dfdabee97c8ddb21005bbc52\transformed\jetified-savedstate-1.2.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\4be12c591a9833e2430657cefea06f9e\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\4be12c591a9833e2430657cefea06f9e\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\f51173b938578942136a18daa1d5ec05\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\f51173b938578942136a18daa1d5ec05\transformed\lifecycle-livedata-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\4be12c591a9833e2430657cefea06f9e\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\4be12c591a9833e2430657cefea06f9e\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\163b95b83835948ce3840986f39c6869\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\163b95b83835948ce3840986f39c6869\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\garci\.gradle\caches\transforms-3\9ef3829d2ce82dd3d2c5a4157cc9b7db\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44

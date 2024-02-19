@@ -64,55 +64,56 @@ class _WallPostState extends State<WallPost> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Image
-          Image.network(
-            widget.imageURL,
-            fit: BoxFit.cover,
-            height: 200,
-          ),
+          if (widget.imageURL.isNotEmpty)
+            Image.network(
+              widget.imageURL,
+              fit: BoxFit.cover,
+              height: 200,
+              errorBuilder: (context, error, stackTrace) {
+                print('Error loading image: $error');
+                return const Text('Error loading image');
+              },
+            ),
 
           const SizedBox(height: 10),
 
           // Message
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                widget.message,
-                style: TextStyle(
-                  color: Colors.black, // Color del texto del mensaje
-                  fontWeight: FontWeight.bold, // Negrita
+          if (widget.message.isNotEmpty)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.message,
+                  style: TextStyle(
+                  color: const Color.fromARGB(255, 0, 0, 0),),
                 ),
-              ),
-              const SizedBox(height: 10),
-              // User and Like button
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    widget.user,
-                    style: TextStyle(
-                      color: Colors.grey[500], // Color del texto del usuario
+                const SizedBox(height: 10),
+                // User and Like button
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      widget.user,
+                      style: TextStyle(color: Colors.grey[500]),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      LikeButton(
-                        isLiked: isLiked,
-                        onTap: toggleLike,
-                      ),
-                      Text(
-                        widget.likes.length.toString(),
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
+                    Row(
+                      children: [
+                        LikeButton(
+                          isLiked: isLiked,
+                          onTap: toggleLike,
+                        ),
+                        Text(
+                          widget.likes.length.toString(),
+                          style: const TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
         ],
       ),
     );
   }
 }
-

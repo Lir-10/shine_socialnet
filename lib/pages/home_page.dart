@@ -25,16 +25,64 @@ class _HomePageState extends State<HomePage> {
     FirebaseAuth.instance.signOut();
   }
 
+  Widget _buildImagePreview() {
+    if (_pickedImage != null) {
+      return Stack(
+        children: [
+          Container(
+            height: 100,
+            width: 100,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: _pickedImage!.path.startsWith('http')
+                  ? Image.network(
+                      _pickedImage!.path,
+                      fit: BoxFit.cover,
+                    )
+                  : Image.file(
+                      File(_pickedImage!.path),
+                      fit: BoxFit.cover,
+                    ),
+            ),
+          ),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: IconButton(
+              icon: Icon(Icons.close),
+              onPressed: () {
+                setState(() {
+                  _pickedImage = null;
+                });
+              },
+            ),
+          ),
+        ],
+      );
+    } else {
+      return Container();
+    }
+  }
+
   Future<String> _uploadImageToStorage() async {
     if (_pickedImage == null) {
       return '';
     }
 
     try {
-      final storageRef =
-          FirebaseStorage.instance.ref().child('images/${DateTime.now()}.png');
-      await storageRef.putFile(File(_pickedImage!.path));
-      return await storageRef.getDownloadURL();
+      final storageRef = FirebaseStorage.instance
+          .ref()
+          .child('images/${DateTime.now().millisecondsSinceEpoch}.png');
+      if (_pickedImage!.path.startsWith('http')) {
+        return _pickedImage!.path;
+      } else {
+        await storageRef.putFile(File(_pickedImage!.path));
+        return await storageRef.getDownloadURL();
+      }
     } catch (e) {
       print('Error al subir la imagen: $e');
       return '';
@@ -62,11 +110,11 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _pickImage() async {
     final picker = ImagePicker();
-    final XFile? pickedImage = await picker.pickImage(source: ImageSource.gallery);
+    final XFile? pickedImage =
+        await picker.pickImage(source: ImageSource.gallery);
 
     if (pickedImage != null) {
       setState(() {
-        // Convertir XFile a PickedFile
         _pickedImage = PickedFile(pickedImage.path);
       });
     }
@@ -95,6 +143,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           children: [
+            _buildImagePreview(),
             Expanded(
               child: StreamBuilder(
                 stream: FirebaseFirestore.instance
@@ -118,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                     );
                   } else if (snapshot.hasError) {
                     return Center(
-                      child: Text('Error:${snapshot.error}'),
+                      child: Text('Error: ${snapshot.error}'),
                     );
                   }
                   return const Center(
@@ -162,3 +211,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
