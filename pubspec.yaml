@@ -37,9 +37,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
-  google_sign_in: ^5.4.2
-  cloud_firestore: ^4.14.0
+  google_sign_in: ^6.2.1
+  cloud_firestore: ^4.15.4
   intl: ^0.19.0
+  # ... (otras dependencias)
+
+  firebase_storage: ^11.6.5
+  firebase: ^9.0.0
+  image_picker_web: ^3.1.1
+  cached_network_image: ^3.3.1
+  image_picker: ^1.0.7
 
 dev_dependencies:
   flutter_test:
@@ -50,7 +57,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
