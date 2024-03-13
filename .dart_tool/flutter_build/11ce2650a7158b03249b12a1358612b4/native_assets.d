@@ -1,0 +1,1 @@
+ C:\\Users\\garci\\OneDrive\\Documentos\\shine_socialnet\\.dart_tool\\flutter_build\\11ce2650a7158b03249b12a1358612b4\\native_assets.yaml: 

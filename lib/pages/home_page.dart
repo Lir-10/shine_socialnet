@@ -9,6 +9,8 @@ import 'package:the_wall/components/my_text_field.dart';
 import 'package:the_wall/pages/profile_page.dart';
 import 'package:the_wall/pages/wall_post.dart';
 import 'package:the_wall/helper/helper_methods.dart';
+import 'package:the_wall/theme/dark_theme.dart';
+import 'package:the_wall/theme/light_theme.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,9 +23,17 @@ class _HomePageState extends State<HomePage> {
   final currentUser = FirebaseAuth.instance.currentUser!;
   final textController = TextEditingController();
   PickedFile? _pickedImage;
+  bool isDarkMode = false;
 
-  void signUserOut() {
-    FirebaseAuth.instance.signOut();
+  @override
+  void initState() {
+    super.initState();
+    isDarkMode = false; // Inicializa el modo claro por defecto
+  }
+
+  // Función que devuelve el tema actual basado en el estado del interruptor
+  ThemeData getCurrentTheme() {
+    return isDarkMode ? darkTheme : lightTheme;
   }
 
   Widget _buildImagePreview() {
@@ -129,88 +139,104 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: MyDrawer(
-        onProfileTap: goToProfilePage,
-        onSignOut: signUserOut,
-      ),
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      appBar: AppBar(
-        title: const Text('Shine'),
-        backgroundColor: Color.fromARGB(255, 0, 0, 0),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            _buildImagePreview(),
-            Expanded(
-              child: StreamBuilder(
-                stream: FirebaseFirestore.instance
-                    .collection('User Posts')
-                    .orderBy('TimeStamp', descending: false)
-                    .snapshots(),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                      itemCount: snapshot.data!.docs.length,
-                      itemBuilder: (context, index) {
-                        final post = snapshot.data!.docs[index];
-                        return WallPost(
-                          message: post['Message'],
-                          user: post['UserEmail'],
-                          imageURL: post['ImageURL'],
-                          postId: post.id,
-                          likes: List<String>.from(post['Likes'] ?? []),
-                          time: formatDate(post['TimeStamp']),
-                        );
-                      },
+    return MaterialApp(
+      theme: getCurrentTheme(), // Configura el tema según el interruptor
+      home: Scaffold(
+        drawer: MyDrawer(
+          onProfileTap: goToProfilePage,
+          onSignOut: signUserOut, // Agrega la función para cerrar sesión
+        ),
+        appBar: AppBar(
+          title: const Text('Shine'),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              _buildImagePreview(),
+              Expanded(
+                child: StreamBuilder(
+                  stream: FirebaseFirestore.instance
+                      .collection('User Posts')
+                      .orderBy('TimeStamp', descending: false)
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return ListView.builder(
+                        itemCount: snapshot.data!.docs.length,
+                        itemBuilder: (context, index) {
+                          final post = snapshot.data!.docs[index];
+                          return WallPost(
+                            message: post['Message'],
+                            user: post['UserEmail'],
+                            imageURL: post['ImageURL'],
+                            postId: post.id,
+                            likes: List<String>.from(post['Likes'] ?? []),
+                            time: formatDate(post['TimeStamp']),
+                          );
+                        },
+                      );
+                    } else if (snapshot.hasError) {
+                      return Center(
+                        child: Text('Error: ${snapshot.error}'),
+                      );
+                    }
+                    return const Center(
+                      child: CircularProgressIndicator(),
                     );
-                  } else if (snapshot.hasError) {
-                    return Center(
-                      child: Text('Error: ${snapshot.error}'),
-                    );
-                  }
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                },
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: MyTextField(
-                      controller: textController,
-                      hintText: 'Escribe Algo',
-                      obscureText: false,
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: MyTextField(
+                        controller: textController,
+                        hintText: 'Escribe Algo',
+                        obscureText: false,
+                      ),
                     ),
-                  ),
-                  IconButton(
-                    onPressed: _pickImage,
-                    icon: const Icon(Icons.image),
-                  ),
-                  IconButton(
-                    onPressed: postMessage,
-                    icon: const Icon(Icons.arrow_circle_up),
-                  ),
-                ],
+                    IconButton(
+                      onPressed: _pickImage,
+                      icon: const Icon(Icons.image),
+                    ),
+                    IconButton(
+                      onPressed: postMessage,
+                      icon: const Icon(Icons.arrow_circle_up),
+                    ),
+                    // Agrega el interruptor para cambiar entre los temas
+                    Switch(
+                      value: isDarkMode,
+                      onChanged: (value) {
+                        setState(() {
+                          isDarkMode = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Text(
-              'Sesión Iniciada Como: ${currentUser.email!}',
-              style: const TextStyle(color: Colors.grey),
-            ),
-            const SizedBox(
-              height: 50,
-            )
-          ],
+              Text(
+                'Sesión Iniciada Como: ${currentUser.email!}',
+                style: const TextStyle(color: Colors.grey),
+              ),
+              const SizedBox(
+                height: 50,
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
+
 
