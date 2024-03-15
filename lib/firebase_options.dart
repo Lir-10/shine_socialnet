@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '134611428258',
     projectId: 'socialnetwork-3e670',
     storageBucket: 'socialnetwork-3e670.appspot.com',
+    iosClientId: '134611428258-7o3dobq54lh2fm0dbi8b5idnqr6u6rbk.apps.googleusercontent.com',
     iosBundleId: 'com.example.theWall',
   );
 
@@ -76,6 +77,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '134611428258',
     projectId: 'socialnetwork-3e670',
     storageBucket: 'socialnetwork-3e670.appspot.com',
+    iosClientId: '134611428258-7o3dobq54lh2fm0dbi8b5idnqr6u6rbk.apps.googleusercontent.com',
     iosBundleId: 'com.example.theWall',
   );
 }

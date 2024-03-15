@@ -12,7 +12,12 @@
           "package_name": "com.example.the_wall"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "134611428258-1thiqit0fh4p5bds8ps912br23uof528.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCSbgI5ErphAnVYQoPn2mxMhnrz-ceRcwk"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134611428258-1thiqit0fh4p5bds8ps912br23uof528.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "134611428258-7o3dobq54lh2fm0dbi8b5idnqr6u6rbk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.theWall"
+              }
+            }
+          ]
         }
       }
     }
