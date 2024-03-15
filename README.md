@@ -80,5 +80,5 @@ Para lanzar este proyecto ejecuta el siguiente comando en la terminal
 
 - [@Efrain180](https://github.com/Efrain180)
 - [@Lir-10](https://github.com/Lir-10)
-- Jose Alexander Garcia
+- [Jose Alexander Garcia](https://github.com/papiyeison)
 - Fidela Ramirez
