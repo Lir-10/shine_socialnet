@@ -82,6 +82,7 @@ class _WallPostState extends State<WallPost> {
       ),
     );
   }
+  
 
   void toggleLike() {
     setState(() {
